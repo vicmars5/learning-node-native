@@ -1,5 +1,14 @@
-// note that the compiled addon is placed under the following path
-const { Hello } = require('./build/Release/addon')
+const { IsPrime } = require('./build/Release/addon')
+const { isPrime } = require('./is-prime.js')
 
-// `Hello` function returns a string, so we have to console.log
-console.log(Hello())
+const number = 654188429
+const NATIVE = 'native'
+const JS = 'js'
+
+console.time(NATIVE)
+console.log(`${NATIVE}: checking whether ${number} is prime... ${IsPrime(number)}`)
+console.timeEnd(NATIVE)
+
+console.time(JS)
+console.log(`${JS}: checking whether ${number} is prime... ${isPrime(number)}`)
+console.timeEnd(JS)
