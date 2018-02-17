@@ -2,7 +2,7 @@
 const { Total } = require('./build/Release/addon')
 const { total } = require('./main.js')
 
-const arr = (new Array(5000000)).map(() => Math.random((Math.random() * 50)))
+const arr = (Array(10).fill(0)).map(() => Math.floor((Math.random() * 50)))
 const buff = Buffer.from(arr)
 // `Hello` function returns a string, so we have to console.log
 console.time('c++')
