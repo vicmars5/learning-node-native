@@ -9,6 +9,7 @@ NAN_METHOD(IsPrime) {
 
     if (number < 2) {
         info.GetReturnValue().Set(Nan::False());
+        return;
     }
 
     for (int i  = 2; i < number; i++) {
